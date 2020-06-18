@@ -1,63 +1,39 @@
-import Head from 'next/head'
+import Head from "next/head";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const variants = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0.2, x: -100 }
+  };
+
   return (
-    <div className="container">
+    <div className='container'>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>LATITUD NÁUTICA</title>
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <motion.div
+          initial='hidden'
+          animate='visible'
+          variants={variants}
+          transition={{ ease: "easeOut", duration: 1 }}
+        >
+          <h1 className='title'>
+            Bienvenido a <br />
+            <a href='https://www.facebook.com/profile.php?id=100004283867132'>
+              LATITUD NÁUTICA
+            </a>
+          </h1>
+        </motion.div>
+        <motion.div initial='hidden' animate='visible' variants={variants}>
+          <div className='text'>estamos creando nuestra página web</div>
+        </motion.div>
       </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
+      <footer>Code by B.M.</footer>
 
       <style jsx>{`
         .container {
@@ -117,6 +93,12 @@ export default function Home() {
           margin: 0;
           line-height: 1.15;
           font-size: 4rem;
+        }
+
+        .text {
+          margin: 10px 0;
+          line-height: 1.15;
+          font-size: 2rem;
         }
 
         .title,
@@ -205,5 +187,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
