@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy": "nohup npm start &",
     "start": "next start"
   },
   "dependencies": {
