@@ -33,7 +33,7 @@ export default function Home() {
         </motion.div>
       </main>
 
-      <footer>Code by B.M.</footer>
+      <footer>Code by B.M. __3e__</footer>
 
       <style jsx>{`
         .container {
