@@ -2,14 +2,18 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import styled from "styled-components";
 // import { motion } from "framer-motion";
-const Container = styled.div`
-  min-height: 100vh;
-  padding: 0 0.5rem;
+const Main = styled.main`
+  width: 100%;
+  background: gray;
+  color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;  
+  flex-direction: row;
+
+  div {
+    margin: 50px;
+  }
 `;
+
 export default function Home() {
   const variants = {
     visible: { opacity: 1, x: 0 },
@@ -18,15 +22,10 @@ export default function Home() {
 
   return (
     <Layout>
-      <Head>
-        <title>LATITUD NÁUTICA</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <Container>
-        <main>
-          <div>Latitud Náutica</div>
-        </main>
-      </Container>
+      <Main>
+        <div>Side bar</div>
+        <div>Lista de productos</div>
+      </Main>
     </Layout>
   );
 }
