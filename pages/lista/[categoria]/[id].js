@@ -1,21 +1,28 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Layout from "../../../components/layout";
+
+
 
 const Lista = (props) => {
   const router = useRouter();
   const { products } = props.data;
   console.log(props.data);
 
-  return props.data.map((item) => {
-    return (
-      <p key={item.id}>
-        {item.id} - {item.name}
-        {item.SubCategories.map((sub) => {
-          return <p>{sub.name}</p>;
-        })}
-      </p>
-    );
-  });
+  return (
+    <Layout>
+      {props.data.map((item) => {
+        return (
+          <p key={item.id}>
+            {item.id} - {item.name}
+            {item.SubCategories.map((sub) => {
+              return <p>{sub.name}</p>;
+            })}
+          </p>
+        );
+      })}
+    </Layout>
+  );
 };
 
 export default Lista;

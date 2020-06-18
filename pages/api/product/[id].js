@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+export default (req, res) => {
   if (req.method !== "GET") {
     res.status(500).json({ message: "HTTP method not accepted" });
   }
